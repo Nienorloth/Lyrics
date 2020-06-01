@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const Song = ({lyrics}) => {
+const Song = ({lyrics, searchlyrics}) => {
    
     if(lyrics.length === 0){
         return null;
@@ -8,7 +8,7 @@ const Song = ({lyrics}) => {
    
     return (
         <Fragment>
-            <h2>Song lyrics</h2>
+            <h2>{ searchlyrics.song.toUpperCase() }</h2>
             <p className="letra">{lyrics}</p>
         </Fragment>
     );
