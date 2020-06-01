@@ -75,7 +75,7 @@ const Formulario = ({saveSearchLyrics}) => {
                             <button
                                 type="submit"
                                 className="btn btn-secondary float-right"
-                            >Buscar</button>
+                            >Search</button>
                         </fieldset>
 
                     </form>
