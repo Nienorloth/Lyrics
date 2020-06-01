@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState, useEffect } from 'react';
+import Formulario from './components/Formulario';
+
 
 function App() {
+
+  //define the state
+  const [ searchlyrics, saveSearchLyrics ] = useState({});
+
+  useEffect(() => {
+    if(Object.keys(searchlyrics).length === 0) return;
+
+   const consultarApiLetra = async () => {
+
+    const { artist, song } = searchlyrics;
+
+   const url = `https://api.lyrics.ovh/v1/${artist}/${song}`;
+   }
+   consultarApiLetra();  
+  }, [searchlyrics])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Formulario
+        saveSearchLyrics={saveSearchLyrics}
+      />
+    </Fragment>
   );
 }
 
