@@ -65,7 +65,7 @@ const Formulario = ({saveSearchLyrics}) => {
                                             type="text"
                                             className="form-control"
                                             name="song"
-                                            placeholder="Song name"
+                                            placeholder="Song title"
                                             onChange={updateState}
                                             value={song}
                                         />
